@@ -3,7 +3,7 @@ class CreateLoans < ActiveRecord::Migration[6.1]
     create_table :loans do |t|
       t.string :customer_name
       t.string :insurance_policy
-      t.integer :policy_number
+      # t.integer :policy_number # will use db
       t.float :total_coverage_amount
       t.float :premium_amount
       t.date :due_date

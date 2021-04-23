@@ -14,12 +14,3 @@ class CreateInsurances < ActiveRecord::Migration[6.1]
     end
   end
 end
-
-# customer name
-# loan type
-# loan number
-# loan amount
-# due date
-# interest rate
-# pending principle amount
-# loan closed/not

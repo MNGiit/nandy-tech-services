@@ -4,6 +4,12 @@
  <h1><%= @user.name %> page</h1>
 <% end %>
 <%= link_to "Go to Insurances", insurances_path, method:'get' %>
+<%= link_to "Create New Insurance", insurances_new_path %>
+<!--
+<%= link_to "Create New Insurance", insurances_new_path(@user) %>
+<%= link_to "Create New Insurance", new_user_insurance_path(@user) if @user.id == session[:user_id]%>
+-->
+
 <!-- at least 3 different ways to get session id
 <h2><%= request.session_options[:id] %></h2>
 <h2><%= session[:session_id] %></h2>

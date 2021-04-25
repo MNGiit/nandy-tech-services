@@ -3,7 +3,7 @@
 <% else %>
  <h1><%= @user.name %> page</h1>
 <% end %>
-
+<%= link_to "Go to Insurances", insurances_path, method:'get' %>
 <!-- at least 3 different ways to get session id
 <h2><%= request.session_options[:id] %></h2>
 <h2><%= session[:session_id] %></h2>

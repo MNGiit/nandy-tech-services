@@ -14,12 +14,11 @@ ActiveRecord::Schema.define(version: 2021_04_23_051034) do
 
   create_table "insurances", force: :cascade do |t|
     t.string "customer_name"
-    t.string "loan_type"
-    t.float "loan_amount"
-    t.float "pending_principle_amount"
-    t.float "interest_rate"
+    t.string "insurance_policy"
+    t.float "total_coverage_amount"
+    t.float "premium_amount"
     t.date "due_date"
-    t.boolean "loan_closed"
+    t.date "maturity_date"
     t.boolean "approval", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -27,11 +26,12 @@ ActiveRecord::Schema.define(version: 2021_04_23_051034) do
 
   create_table "loans", force: :cascade do |t|
     t.string "customer_name"
-    t.string "insurance_policy"
-    t.float "total_coverage_amount"
-    t.float "premium_amount"
+    t.string "loan_type"
+    t.float "loan_amount"
+    t.float "pending_principle_amount"
+    t.float "interest_rate"
     t.date "due_date"
-    t.date "maturity_date"
+    t.boolean "loan_closed"
     t.boolean "approval", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

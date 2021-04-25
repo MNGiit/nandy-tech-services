@@ -1,4 +1,15 @@
-<h1>Welcome to your page</h1>
+<% if session[:user_id].first[1] == @user.id %>
+ <h1>Welcome to your page, <%= @user.name %></h1>
+<% else %>
+ <h1><%= @user.name %> page</h1>
+<% end %>
+
+<!-- at least 3 different ways to get session id
+<h2><%= request.session_options[:id] %></h2>
+<h2><%= session[:session_id] %></h2>
+<h2><%= session.id %></h2>
+-->
+
 <% if session[:user_id] %>
     <%= link_to "Log Out", logout_path, method:'delete' %>
     <% else %>

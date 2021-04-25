@@ -8,6 +8,7 @@ class CreateLoans < ActiveRecord::Migration[6.1]
       t.float :premium_amount
       t.date :due_date
       t.date :maturity_date # if team policy and due paid/not paid
+      t.boolean :approval, default: false
 
       t.timestamps
     end

@@ -9,7 +9,8 @@ class CreateInsurances < ActiveRecord::Migration[6.1]
       t.float :interest_rate
       t.date :due_date
       t.boolean :loan_closed #
-
+      t.boolean :approval, default: false
+      
       t.timestamps
     end
   end

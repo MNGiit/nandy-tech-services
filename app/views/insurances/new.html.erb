@@ -1,2 +1,29 @@
 <h1>New Insurance</h1>
 <h2>Form for a new insurance would go here.</h2>
+<%= form_for @insurance do |f| %>
+  <!-- Customer Name -->
+  <%= f.label :customer_name %>
+  <%= f.text_field :customer_name %> <br>
+
+  <!-- Insurance Policy -->
+  <%= f.label :insurance_policy %>
+  <%= f.text_field :insurance_policy %> <br>
+
+  <!-- Total Coverage Amount -->
+  <%= f.label :total_coverage_amount %>
+  <%= f.number_field :total_coverage_amount %> <br>
+
+  <!-- Premium Amount -->
+  <%= f.label :premium_amount %>
+  <%= f.number_field :premium_amount %> <br>
+
+  <!-- Due Date -->
+  <%= f.label :due_date %>
+  <%= f.date_field :due_date %> <br>
+
+  <!-- Maturity Date if team policy and due paid/not paid -->
+  <%= f.label :maturity_date %>
+  <%= f.date_field :maturity_date %> <br>
+
+  <%= f.submit %>
+<% end %>

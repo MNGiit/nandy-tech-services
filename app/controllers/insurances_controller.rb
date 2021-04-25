@@ -9,6 +9,7 @@ class InsurancesController < ApplicationController
   end
 
   def new
+    @insurance = Insurance.new
     render :new
   end
 

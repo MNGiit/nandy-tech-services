@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def create
+  def create #log in and maybe later create a new account
     # search for existing user
     @user = User.find_by(name: params[:user][:name])
     if @user # implement password check
@@ -17,6 +17,11 @@ class SessionsController < ApplicationController
     else # user wasn't found
       redirect_to login_path
     end
+  end
+
+  def destroy
+    sesson.clear
+    redirect_to login_path
   end
 
 end

@@ -1,1 +1,15 @@
 <h1>Welcome to the login page.</h1>
+
+<%= form_for @user, url: {action: "create", controller: "sessions"} do |f| %>
+
+    <!-- Username -->
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <!-- Password -->
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+
+    <!-- Submit -->
+    <%= f.submit "Log in" %>
+<% end %>

@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sesson.clear
+    session.clear
     redirect_to login_path
   end
 

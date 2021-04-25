@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
 
   # users
-  get '/user' => 'users#show'
-  get '/users' => 'users#index'
+  # get '/user' => 'users#show'
+  # get '/users' => 'users#index'
+  resources :users, only: [:index, :show]
 
   # insurances
   get 'insurances/new', to: 'insurances#new'

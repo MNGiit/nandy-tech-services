@@ -39,6 +39,21 @@ class LoansController < ApplicationController
     end
   end
 
+  def update
+    @loan = Loan.find(params[:id])
+    user = User.find_by(id: session[:user_id].first[1])
+    if user && user.isAdmin
+      #@insurance.update(insurance_params)
+      #@insurance.update(approval_param)
+      @loan.approval = true
+      @loan.save
+
+      redirect_to @loan
+    else
+      redirect_to login_path
+    end
+  end
+
   private
 
   def loan_params

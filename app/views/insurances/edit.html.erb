@@ -1,2 +1,15 @@
 <h1>Edit Insurance</h1>
 <h2>Admin can approve the insurance here.<h2>
+<% if @insurance %>
+  <p>Customer Name: <%= @insurance.customer_name %></p>
+  <p>Insurance Policy: <%= @insurance.insurance_policy %></p>
+  <p>Total Coverage Amount: <%= @insurance.total_coverage_amount %></p>
+  <p>Premium Amount: <%= @insurance.premium_amount %></p>
+  <p>Due Date: <%= @insurance.due_date %></p>
+  <p>Maturity Date: <%= @insurance.maturity_date %></p>
+<% end %>
+<p>Approve this insurance?</p>
+<%= form_for @insurance do |f| %>
+  <%= f.hidden_field :approval, value: true %>
+  <%= f.submit %>
+<% end %>

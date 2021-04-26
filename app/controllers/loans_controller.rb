@@ -17,6 +17,14 @@ class LoansController < ApplicationController
     redirect_to @loan
   end
 
+  def show
+    # @insurance = Insurance.find(params[:id]) # works but can lead to error if id isn't found
+    @loan = Loan.find_by(id: params[:id])
+    if !@loan
+      redirect_to new_loan_path
+    end
+  end
+
   private
 
   def loan_params

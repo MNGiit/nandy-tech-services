@@ -6,4 +6,9 @@ class LoansController < ApplicationController
       redirect_to login_path
     end
   end
+
+  def new
+    @loan = Loan.new
+    render :new
+  end
 end

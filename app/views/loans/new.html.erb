@@ -1,2 +1,33 @@
 <h1>New Loan</h1>
 <h2>Form for a new loan would go here.</h2>
+<%= form_for @loan do |f| %>
+  <!-- Customer Name -->
+  <%= f.label :customer_name %>
+  <%= f.text_field :customer_name %> <br>
+
+  <!-- Loan Type -->
+  <%= f.label :loan_type %>
+  <%= f.text_field :loan_type %> <br>
+
+  <!-- Loan Amount -->
+  <%= f.label :loan_amount %>
+  <%= f.number_field :loan_amount %> <br>
+
+  <!-- Pending Principle Amount -->
+  <%= f.label :pending_principle_amount %>
+  <%= f.number_field :pending_principle_amount %> <br>
+
+  <!-- Interest Rate -->
+  <%= f.label :interest_rate %>
+  <%= f.number_field :interest_rate, step: :any %> <br>
+
+  <!-- Loan Closed -->
+  <%= f.label :loan_closed %>
+  <%= select_tag(:loan_closed, options_for_select([['Open', false], ['Closed', true]])) %> <br>
+
+  <!-- Due Date -->
+  <%= f.label :due_date %>
+  <%= f.date_field :due_date %> <br>
+
+  <%= f.submit %>
+<% end %>

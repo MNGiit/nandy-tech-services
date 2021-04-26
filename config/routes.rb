@@ -20,5 +20,9 @@ Rails.application.routes.draw do
   resources :insurances, only: [:index, :new, :create, :show, :edit, :update] # consider nesting it inside users
 
   # loans
+  # get 'loans', to: 'loans#index'
+  get 'loans/new', to: 'loans#new'
+  resources :loans, only: [:index, :new, :create, :show, :edit, :update] # consider nesting it inside users
+
 
 end

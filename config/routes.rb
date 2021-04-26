@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # insurances
   get 'insurances', to: 'insurances#index'
   get 'insurances/new', to: 'insurances#new'
+  resources :insurances, only: [:index, :new, :create, :show] # consider nesting it inside users
 
   # loans
 

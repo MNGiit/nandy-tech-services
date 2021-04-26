@@ -25,6 +25,14 @@ class InsurancesController < ApplicationController
     # end
   end
 
+  def show
+    # @insurance = Insurance.find(params[:id]) # works but can lead to error if id isn't found
+    @insurance = Insurance.find_by(id: params[:id])
+    if !@insurance
+      redirect_to new_insurance_path
+    end
+  end
+
   private
 
   def insurance_params

@@ -1,2 +1,5 @@
 <h1>All Insurances</h1>
 <h2>Insurances inside the database would go here.</h2>
+<% @insurances.each do |i| %>
+  <p><%= link_to i.id, insurance_path(i) %>, customer name: <%= i.customer_name %>, is approved? <%= i.approval %>
+<% end %>

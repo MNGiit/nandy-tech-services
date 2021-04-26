@@ -25,6 +25,20 @@ class LoansController < ApplicationController
     end
   end
 
+  def edit
+    # user = User.find_by(id: session[:user_id]) # can't find user
+    user = User.find_by(id: session[:user_id].first[1])
+    if user
+      if user.isAdmin
+        @loan = Loan.find(params[:id])
+      else
+        redirect_to loans_path
+      end
+    else
+      redirect_to login_path
+    end
+  end
+
   private
 
   def loan_params

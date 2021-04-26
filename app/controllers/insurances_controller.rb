@@ -47,6 +47,21 @@ class InsurancesController < ApplicationController
     end
   end
 
+  def update
+    @insurance = Insurance.find(params[:id])
+    user = User.find_by(id: session[:user_id].first[1])
+    if user && user.isAdmin
+      #@insurance.update(insurance_params)
+      #@insurance.update(approval_param)
+      @insurance.approval = true
+      @insurance.save
+
+      redirect_to @insurance
+    else
+      redirect_to login_path
+    end
+  end
+
   private
 
   def insurance_params

@@ -12,6 +12,9 @@
       yes
       <% else %>
       no
+      <%= link_to "Edit Approval?", edit_insurance_path %>
+      <!-- link_to "Edit Approval?", edit_insurance_path(@insurance) -->
+      <!-- link_to "Edit Approval?", insurances_edit_path(@insurance) if isAdmin?(session[:user_id]) -->
     <% end %>
   </p>
 <% end %>

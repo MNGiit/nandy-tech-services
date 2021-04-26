@@ -33,6 +33,10 @@ class InsurancesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+  
   private
 
   def insurance_params

@@ -54,6 +54,15 @@ class LoansController < ApplicationController
     end
   end
 
+  def search
+    @loan = Loan.find_by(customer_name: params[:query]) if params[:query]
+    if @loan
+      redirect_to @loan
+    else
+      redirect_to loans_path
+    end
+  end
+
   private
 
   def loan_params

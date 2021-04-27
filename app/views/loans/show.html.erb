@@ -1,2 +1,25 @@
 <h1>Individual Loan</h1>
 <h2>Show a single loan, and all of it's information.</h2>
+<% if @loan %>
+  <p>Customer Name: <%= @loan.customer_name %></p>
+  <p>Loan Type: <%= @loan.loan_type %></p>
+  <p>Loan Amount: <%= @loan.loan_amount %></p>
+  <p>Pending Principle Amount: <%= @loan.pending_principle_amount %></p>
+  <p>Interest Rate: <%= @loan.interest_rate %></p>
+  <p>Loan Closed: <% if @loan.loan_closed %>
+    Closed
+    <% else %>
+    Open
+    <% end %>
+  <p>Due Date: <%= @loan.due_date %></p>
+  <p>Admin Approved?
+    <% if @loan.approval %>
+      yes
+      <% else %>
+      no
+      <%= link_to "Edit Approval?", edit_loan_path %>
+      <!-- link_to "Edit Approval?", edit_insurance_path(@insurance) -->
+      <!-- link_to "Edit Approval?", insurances_edit_path(@insurance) if isAdmin?(session[:user_id]) -->
+    <% end %>
+  </p>
+<% end %>

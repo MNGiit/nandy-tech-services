@@ -55,7 +55,12 @@ class LoansController < ApplicationController
   end
 
   def search
-    @loan = Loan.find_by(customer_name: params[:query]) if params[:query]
+    if params[:query2]
+      @loan = Loan.find_by(id: params[:query2])
+    elsif
+      @loan = Loan.find_by(customer_name: params[:query])
+    end
+
     if @loan
       redirect_to @loan
     else

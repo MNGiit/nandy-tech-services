@@ -1,9 +1,19 @@
 <h1>All loans</h1>
 <h2>Loans inside the database would go here.</h2>
+<%= link_to "Go to Insurances", insurances_path, method:'get' %>
+<%= link_to "Create New Insurance", insurances_new_path %> <br>
+<%= link_to "Go to Loans", loans_path, method:'get' %>
+<%= link_to "Create New Loan", loans_new_path %> <br>
+<% if session[:user_id] %>
+    <%= link_to "Log Out", logout_path, method:'delete' %>
+    <% else %>
+    <%= link_to "Log In", login_path %><br>
+<% end %>
+
 <%= form_with url: loans_search_path, method: :get do |form| %> <!-- can replace loans_search_path with /loans/search -->
   <%= form.label :query, "Search using Customer Name:" %>
   <%= form.text_field :query %>
-  or 
+  or
   <%= form.label :query2, "Search using Loan Number:" %>
   <%= form.number_field :query2 %>
   <%= form.submit "Search" %>

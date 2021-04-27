@@ -1,5 +1,15 @@
 <h1>Individual Insurance</h1>
 <h2>Show a single insurance, and all of it's information.</h2>
+<%= link_to "Go to Insurances", insurances_path, method:'get' %>
+<%= link_to "Create New Insurance", insurances_new_path %> <br>
+<%= link_to "Go to Loans", loans_path, method:'get' %>
+<%= link_to "Create New Loan", loans_new_path %> <br>
+<% if session[:user_id] %>
+    <%= link_to "Log Out", logout_path, method:'delete' %>
+    <% else %>
+    <%= link_to "Log In", login_path %><br>
+<% end %>
+
 <% if @insurance %>
   <p>Customer Name: <%= @insurance.customer_name %></p>
   <p>Insurance Policy: <%= @insurance.insurance_policy %></p>

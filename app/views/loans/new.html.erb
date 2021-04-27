@@ -1,5 +1,14 @@
 <h1>New Loan</h1>
 <h2>Form for a new loan would go here.</h2>
+<%= link_to "Go to Insurances", insurances_path, method:'get' %>
+<%= link_to "Create New Insurance", insurances_new_path %> <br>
+<%= link_to "Go to Loans", loans_path, method:'get' %>
+<% if session[:user_id] %>
+    <%= link_to "Log Out", logout_path, method:'delete' %>
+    <% else %>
+    <%= link_to "Log In", login_path %><br>
+<% end %>
+
 <%= form_for @loan do |f| %>
   <!-- Customer Name -->
   <%= f.label :customer_name %>

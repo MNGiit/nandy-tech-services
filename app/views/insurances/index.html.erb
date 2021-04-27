@@ -1,5 +1,13 @@
 <h1>All Insurances</h1>
 <h2>Insurances inside the database would go here.</h2>
+<%= form_with url: insurances_search_path, method: :get do |form| %> <!-- can replace loans_search_path with /loans/search -->
+  <%= form.label :query, "Search using Customer Name:" %>
+  <%= form.text_field :query %>
+  or
+  <%= form.label :query2, "Search using Insurance Policy Number:" %>
+  <%= form.number_field :query2 %>
+  <%= form.submit "Search" %>
+<% end %>
 <% @insurances.each do |i| %>
   <p><%= link_to i.id, insurance_path(i) %>, customer name: <%= i.customer_name %>, is approved? <%= i.approval %>
 <% end %>

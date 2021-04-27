@@ -69,7 +69,7 @@ class InsurancesController < ApplicationController
        @insurance = Insurance.find_by(customer_name: params[:query])
     end
 
-    if  @insurance
+    if @insurance
       redirect_to @insurance
     else
       redirect_to insurances_path

@@ -17,12 +17,12 @@ Rails.application.routes.draw do
   # insurances
   # get 'insurances', to: 'insurances#index'
   get 'insurances/new', to: 'insurances#new'
-  resources :insurances, only: [:index, :new, :create, :show, :edit, :update] # consider nesting it inside users
+  resources :insurances, only: [:index, :new, :create, :show, :edit, :update, :search] # consider nesting it inside users
 
   # loans
   # get 'loans', to: 'loans#index'
   get 'loans/new', to: 'loans#new'
-  resources :loans, only: [:index, :new, :create, :show, :edit, :update] # consider nesting it inside users
+  resources :loans, only: [:index, :new, :create, :show, :edit, :update, :search] # consider nesting it inside users
 
 
 end

@@ -27,7 +27,7 @@ class LoansController < ApplicationController
 
   def edit
     # user = User.find_by(id: session[:user_id]) # can't find user
-    user = User.find_by(id: session[:user_id].first[1])
+    user = User.find_by(id: session[:user_id])
     if user
       if user.isAdmin
         @loan = Loan.find(params[:id])
@@ -41,7 +41,7 @@ class LoansController < ApplicationController
 
   def update
     @loan = Loan.find(params[:id])
-    user = User.find_by(id: session[:user_id].first[1])
+    user = User.find_by(id: session[:user_id])
     if user && user.isAdmin
       #@insurance.update(insurance_params)
       #@insurance.update(approval_param)

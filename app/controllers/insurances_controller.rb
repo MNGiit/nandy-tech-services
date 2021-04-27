@@ -62,6 +62,20 @@ class InsurancesController < ApplicationController
     end
   end
 
+  def search
+    if params[:query2]
+      @insurance = Insurance.find_by(id: params[:query2])
+    elsif
+       @insurance = Insurance.find_by(customer_name: params[:query])
+    end
+
+    if  @insurance
+      redirect_to @insurance
+    else
+      redirect_to insurances_path
+    end
+  end
+
   private
 
   def insurance_params

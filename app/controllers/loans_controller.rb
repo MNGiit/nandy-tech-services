@@ -55,10 +55,10 @@ class LoansController < ApplicationController
   end
 
   def search
-    if params[:query2]
+    if params[:query].blank?
       @loan = Loan.find_by(id: params[:query2])
-    elsif
-      @loan = Loan.find_by(customer_name: params[:query])
+    else
+       @loan = Loan.find_by(customer_name: params[:query])
     end
 
     if @loan

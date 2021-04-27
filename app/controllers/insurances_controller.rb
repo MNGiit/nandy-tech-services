@@ -63,9 +63,9 @@ class InsurancesController < ApplicationController
   end
 
   def search
-    if params[:query2]
+    if params[:query].blank?
       @insurance = Insurance.find_by(id: params[:query2])
-    elsif
+    else
        @insurance = Insurance.find_by(customer_name: params[:query])
     end
 
